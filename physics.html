@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>Physics</title>
+</head>
+
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="index.html" class="flex items-center">
+                <img src="SRJ2-removebg-preview.png" class="h-8 mr-3" alt="Jee Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jee Preperation</span>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="physics.html" target="_blank"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Physics</a>
+                    </li>
+                    <li>
+                        <a href="chemistry.html" target="_blank"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Chemistry</a>
+                    </li>
+                    <li>
+                        <a href="maths.html" target="_blank"
+                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Mathematics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-white dark:bg-gray-900 antialiased">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2
+                    class="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+                    PHYSICS
+                </h2>
+                <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+                    Crafted with skill and care to help you find things faster!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 mt-12 text-center sm:mt-16 gap-x-20 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 1
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Electrostatics
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=m5VbK66a254&list=PLF_7kfnwLFCHjzvhflQjAOG97MgutH3Z5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.pw.live/study/batches/prayas-jee-2024-430915/subjects/physics-994055/subject-topics/topics/ch--19---electrostatics-121524/contents?came_from=study&activeSection=All%20classes&subject=Physics&batchSubjectId=63fc87eb96d02d00184dd0de&topic=Ch-%2019%20:%20Electrostatics&chapterId=648051853b383b00186f305e"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 2
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Current Electricity
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=IdAji34f7TE&list=PLF_7kfnwLFCFZ4OVmzjBSqMIAzDK_6b8f" title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.pw.live/study/batches/prayas-jee-2024-430915/subjects/physics-994055/subject-topics/topics/ch--21---current-electricity-091720/contents?came_from=study&subject=Physics&batchSubjectId=63fc87eb96d02d00184dd0de&querySubjectId=&topic=Ch-%2021%20:%20Current%20Electricity&chapterId=6480522829f1f9001892a5d2"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 3
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Capacitors
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=KV5HL1AgLeY&list=PLF_7kfnwLFCFxjSU9HKYiq2K2cxbpf6mz" title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.pw.live/study/batches/prayas-jee-2024-430915/subjects/physics-994055/subject-topics/topics/ch--22---capacitor-921760/contents?came_from=study&subject=Physics&batchSubjectId=63fc87eb96d02d00184dd0de&querySubjectId=&topic=Ch-%2022%20:%20Capacitor&chapterId=6480524b99a58c00181d97d8"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 4
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Moving Charges and Magnetism
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=pJtE71ox6UA&list=PLF_7kfnwLFCF8sjVSdxn3yWAghIgVnw26" title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 5
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Magnetism and Matter
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=zQwBW0HqEQA&list=PLYxMlXeOofIVFzJybpSfAM5pbbhUwxYrn"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 6
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Electromagnetic Induction
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=svd52GIjvDU&list=PLF_7kfnwLFCE6mi_so22MJJ988uaHBJaQ"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 7
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Alternating current
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 8
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Electromagnetic Waves
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=cM25p1HE71Y" title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 9
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Ray Optics
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=_nGZGo4gHGo&list=PLF_7kfnwLFCFxb0yvMYbPqzvZn2GN5aMw"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 10
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Wave Optics
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=6vOzZ8esTSs&list=PLF_7kfnwLFCHr4eZATw4YURnGNr6mwF5R"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 11
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Dual nature of Radiation
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=2JYSVsXV3Ac&list=PLfak0Pp_1OE4MqKgSdtL9eaFfVxnRaAuN"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=2JYSVsXV3Ac&list=PLfak0Pp_1OE4MqKgSdtL9eaFfVxnRaAuN"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 12
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Atoms
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=PiUJXapv-w0&list=PLfak0Pp_1OE4MqKgSdtL9eaFfVxnRaAuN&index=5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 13
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Nuclei
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=kyYFsXp4kcQ&list=PLfak0Pp_1OE4MqKgSdtL9eaFfVxnRaAuN&index=8"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+                <div class="space-y-4 bg-blue-100 justify-center hover:bg-blue-200 rounded-lg">
+                    <span
+                        class="bg-gray-100 text-gray-900 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+                        Chapter 14
+                    </span>
+                    <h3 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white">
+                        Semiconductor
+                    </h3>
+                    <p class="text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Remember that this is a one shot video, practice very hard to counter jee mains questions
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=hccEUqoviH8&list=PLfak0Pp_1OE4MqKgSdtL9eaFfVxnRaAuN&index=16"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Lecture
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=0X2ZRsOqBms&list=PLF_7kfnwLFCELMB-TfYgbfAN2nuP-z4t5"
+                        title="" target="_blank"
+                        class="text-white bg-blue-700 justify-center hover:bg-blue-800 inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button">
+                        Grind..
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <p>🕉️</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
