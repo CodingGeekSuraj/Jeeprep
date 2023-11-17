@@ -1,691 +1,1835 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Weekly Lecture Plan</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="e4de1665-1fe4-4015-aba5-3f5f3dff1eeb" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1878.jpg" style="object-position:center 0%"/><h1 class="page-title">Weekly Lecture Plan</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0de8f86b-d1c1-4309-809d-f65dc5dff04e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 1(15 NOV to 21 NOV)<table id="8708f34e-1942-4847-8b79-592db2da8c8e" class="simple-table"><thead class="simple-table-header"><tr id="844434ad-b68c-40ff-bfe7-5e631595c62e"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="1d15aa33-a27d-489c-a127-c3887dad8f61"><td id="j{=h" class="" style="width:319px">Electrostatics</td><td id="z[Wl" class="" style="width:319px">GOC</td><td id="g\:&gt;" class="" style="width:319px">Relation and Functions</td></tr><tr id="c001d31c-0dda-4031-9bda-958fd41d4891"><td id="j{=h" class="" style="width:319px">17 Lectures</td><td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td><td id="g\:&gt;" class="" style="width:319px">17 Lectures</td></tr><tr id="6945155a-185a-4b46-9fd8-007aff917760"><td id="j{=h" class="" style="width:319px">17 Hours</td><td id="z[Wl" class="" style="width:319px">7 Hours</td><td id="g\:&gt;" class="" style="width:319px">17 Hours</td></tr></tbody></table><table id="a108c36f-7257-439d-a702-ddc954041829" class="simple-table"><thead class="simple-table-header"><tr id="b60736b5-8df4-4043-9349-9a33995264f7"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="bf624537-87cb-4594-bc75-9d8ba237fd39"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">15 Nov</th><td id="hIeB" class="" style="width:239.25px">1,2,3</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px"></td></tr><tr id="d848c12f-7b3b-466b-8cb6-17e811f0a001"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">16 Nov</th><td id="hIeB" class="" style="width:239.25px">4,5</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px"></td></tr><tr id="1430d693-bcc6-43d0-88dc-45c64a8d7576"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">17 Nov</th><td id="hIeB" class="" style="width:239.25px">6,7,8</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">1,2,3</td></tr><tr id="3d6c97cd-bc30-4e16-b6d4-44f1ad79ba78"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">18 Nov</th><td id="hIeB" class="" style="width:239.25px">9,10</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">4,5,6,7</td></tr><tr id="d7dc17af-cefe-49e3-9f71-16dbff8b0073"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">19 Nov</th><td id="hIeB" class="" style="width:239.25px">11,12,13</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">8,9,10</td></tr><tr id="82fd7c48-bdad-4818-bb12-8e23eac12d04"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">20 Nov</th><td id="hIeB" class="" style="width:239.25px">14,15</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">11,12,13,14</td></tr><tr id="a43fd4b3-94fb-4093-87e5-c4eb8cb3af20"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">21 Nov</th><td id="hIeB" class="" style="width:239.25px">16,17</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">15,16,17</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c9759b4e-97b6-48d6-be02-711f2ace5fc9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 2(22 NOV TO 28 NOV)<table id="f937a894-5d53-4c61-a400-d63d1244eea1" class="simple-table"><thead class="simple-table-header"><tr id="612410cb-75c3-4380-b46b-876e8d7372bf"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="5bbda1f5-6220-4cac-a736-db14b3b58c2e"><td id="j{=h" class="" style="width:319px">2. Current Electricity</td><td id="z[Wl" class="" style="width:319px">2. Isomerism</td><td id="g\:&gt;" class="" style="width:319px">2.Inverse Trigonometric
-Functions</td></tr><tr id="4ac03dbe-18ae-4014-89a9-141e58d63477"><td id="j{=h" class="" style="width:319px">16 Lectures</td><td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td><td id="g\:&gt;" class="" style="width:319px">10 Lectures</td></tr><tr id="90f9b108-3777-4224-bc69-1f01093104d5"><td id="j{=h" class="" style="width:319px">16 Hours</td><td id="z[Wl" class="" style="width:319px">8 Hours</td><td id="g\:&gt;" class="" style="width:319px">10 Hours</td></tr></tbody></table><table id="b8509b6c-090a-45fe-9ca7-3141b6a121ca" class="simple-table"><thead class="simple-table-header"><tr id="462e2eca-468d-44f1-a359-50f8d2372065"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="dad19da3-c23e-4ea3-ab31-41bbdd1b921d"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">22 Nov</th><td id="hIeB" class="" style="width:239.25px">1,2</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">1</td></tr><tr id="ac4cc42e-6f4c-4543-8ab3-310585d996ef"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">23 Nov</th><td id="hIeB" class="" style="width:239.25px">3,4</td><td id="bkkU" class="" style="width:239.25px">2 hour</td><td id="eccn" class="" style="width:239.25px">2</td></tr><tr id="9bfb14a8-6d9e-494b-8f78-93da7f0d322a"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">24 Nov</th><td id="hIeB" class="" style="width:239.25px">5,6,7</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">3,4</td></tr><tr id="34adb2a4-49ff-45d8-9cfc-6a5f2bfc5127"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">25 Nov</th><td id="hIeB" class="" style="width:239.25px">8,9</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">5,6</td></tr><tr id="0dc0d36c-7bf0-4d2d-a759-1e450b0527e3"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">26 Nov</th><td id="hIeB" class="" style="width:239.25px">10,11</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">7</td></tr><tr id="2d2e9f87-b57c-4c40-b525-bc49b5137882"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">27 Nov</th><td id="hIeB" class="" style="width:239.25px">12,13,14</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">8</td></tr><tr id="25f78417-5aa5-4e75-baf9-3faa3deb16d7"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">28 Nov</th><td id="hIeB" class="" style="width:239.25px">15,16</td><td id="bkkU" class="" style="width:239.25px">1 hour</td><td id="eccn" class="" style="width:239.25px">9,10</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b682400d-3c26-47ab-bce0-1e75ad6235a8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 3(29 NOV TO 5 DEC)<table id="20397cdf-5003-41a3-9a6c-550c9602240b" class="simple-table"><thead class="simple-table-header"><tr id="7de81a62-86f8-46e8-ab6e-685eabd745f9"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="bab66adb-830e-42ee-854a-5b9e67480384"><td id="j{=h" class="" style="width:319px">3. Capacitors</td><td id="z[Wl" class="" style="width:319px">3. Hydrocarbons</td><td id="g\:&gt;" class="" style="width:319px">3. Matrices
-4. Determinants</td></tr><tr id="373fb245-aeb9-4daf-b0d6-faf4209c730a"><td id="j{=h" class="" style="width:319px">19 Lectures</td><td id="z[Wl" class="" style="width:319px">8 Lecture</td><td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td></tr><tr id="518b4347-6798-4534-ac7d-60e0e06bc448"><td id="j{=h" class="" style="width:319px">19 Hours</td><td id="z[Wl" class="" style="width:319px">8 Hours</td><td id="g\:&gt;" class="" style="width:319px">12 Hours</td></tr></tbody></table><table id="1e1f94be-5af1-457a-bbf1-23de9672808f" class="simple-table"><thead class="simple-table-header"><tr id="5b45e8b1-9bee-4f45-b2f2-bbd144540ac3"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="2cafc2e6-428d-4063-9204-2b5fd4483395"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">29 Nov</th><td id="hIeB" class="" style="width:239.25px">1,2</td><td id="bkkU" class="" style="width:239.25px">1</td><td id="eccn" class="" style="width:239.25px">1  hour</td></tr><tr id="ced833ac-4d2e-401e-a4b1-e991f6b5754d"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">30 Nov</th><td id="hIeB" class="" style="width:239.25px">3,4,5</td><td id="bkkU" class="" style="width:239.25px">2</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="e62c4801-0ab3-4cfa-8177-a9bef7270447"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">1 Dec</th><td id="hIeB" class="" style="width:239.25px">6,7,8</td><td id="bkkU" class="" style="width:239.25px">3</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="f340825d-cb82-422f-937c-07bb4d31ad09"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">2 Dec</th><td id="hIeB" class="" style="width:239.25px">9,10,11</td><td id="bkkU" class="" style="width:239.25px">4</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="01ba1cdc-98b0-4ddd-bbcc-96757a1f267d"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">3 Dec</th><td id="hIeB" class="" style="width:239.25px">12,13,14</td><td id="bkkU" class="" style="width:239.25px">5</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="1c5df19f-11ca-4e60-a16e-b238f959a32d"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">4 Dec</th><td id="hIeB" class="" style="width:239.25px">15,16,17</td><td id="bkkU" class="" style="width:239.25px">6</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="77fab86b-015a-4b14-83ba-eed1e59c8094"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">5 Dec</th><td id="hIeB" class="" style="width:239.25px">18,19</td><td id="bkkU" class="" style="width:239.25px">7,8</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr></tbody></table><p id="e9b2859c-d130-4d01-a4b6-60de863c0c36" class="">
-</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="02bdf7d7-1885-417d-8522-42cef1d04eb2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 4(6 DEC TO 12 DEC)<table id="192de821-ccd2-4109-91fc-0d75697620f5" class="simple-table"><thead class="simple-table-header"><tr id="0ef57ec3-5a56-4b89-b069-0f3f3b211440"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="6935d63d-056a-46f8-9202-a45397f18f90"><td id="j{=h" class="" style="width:319px">4. Moving Charges and
-Magnetism</td><td id="z[Wl" class="" style="width:319px">4. Haloalkanes and
-Haloarenes</td><td id="g\:&gt;" class="" style="width:319px">5. Limits</td></tr><tr id="b4c5616f-59b3-4502-98cf-475557640cfc"><td id="j{=h" class="" style="width:319px">16 Lectures</td><td id="z[Wl" class="" style="width:319px">8 Lecture</td><td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td></tr><tr id="36e175fc-a7cf-4584-89d8-53139a2ce697"><td id="j{=h" class="" style="width:319px">16 Hours</td><td id="z[Wl" class="" style="width:319px">12 Hours</td><td id="g\:&gt;" class="" style="width:319px">6 hours</td></tr></tbody></table><table id="607848b5-b028-4ece-9950-8f1fb762597b" class="simple-table"><thead class="simple-table-header"><tr id="a9de15c2-babf-442f-aef8-324b28ec34d2"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="71221266-dcaf-4aa7-91f0-3435d7f1576f"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">6 Dec</th><td id="hIeB" class="" style="width:239.25px">1,2</td><td id="bkkU" class="" style="width:239.25px">1</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="90b58e8d-1652-42b8-af97-06fef2995b51"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">7 Dec</th><td id="hIeB" class="" style="width:239.25px">3,4</td><td id="bkkU" class="" style="width:239.25px">2</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="935fc9d4-c8f5-4006-9e92-80c63052b926"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">8 Dec</th><td id="hIeB" class="" style="width:239.25px">5,6,7</td><td id="bkkU" class="" style="width:239.25px">3</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="28dd8cfe-3bcd-41b3-afcb-935122cacb1b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">9 Dec</th><td id="hIeB" class="" style="width:239.25px">8,9</td><td id="bkkU" class="" style="width:239.25px">4,5</td><td id="eccn" class="" style="width:239.25px">no lecture</td></tr><tr id="a7eb038f-8e4f-4b2b-8486-a2f5b08c1d24"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">10 Dec</th><td id="hIeB" class="" style="width:239.25px">10,11</td><td id="bkkU" class="" style="width:239.25px">6</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="08ad0813-ae5d-435e-a92a-7c5ff280d60b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">11 Dec</th><td id="hIeB" class="" style="width:239.25px">12,13,14</td><td id="bkkU" class="" style="width:239.25px">7</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="0985ec77-a6ac-4380-a234-5b64e329b2e6"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">12 Dec</th><td id="hIeB" class="" style="width:239.25px">15,16</td><td id="bkkU" class="" style="width:239.25px">8</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c08e2efd-efc2-48f1-a4f6-5e1771b5a551"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 5(13 DEC TO 19 DEC)<table id="e403d405-f042-4faa-a577-f748b6ff407d" class="simple-table"><thead class="simple-table-header"><tr id="d63e6e65-e661-4cc0-9be0-0354ffafc5b6"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="262663e2-3b35-477c-b33e-905c68316116"><td id="j{=h" class="" style="width:319px">5. Magnetism and Matter</td><td id="z[Wl" class="" style="width:319px">5. Alcohol, Phenols and
-Ethers</td><td id="g\:&gt;" class="" style="width:319px">6. Continuity and
-Differentiability and  6.1. Method of Differentiation</td></tr><tr id="be9cf6db-513b-4c4b-a0fc-4fd62f7840db"><td id="j{=h" class="" style="width:319px">5 Lectures</td><td id="z[Wl" class="" style="width:319px">14 Lecture</td><td id="g\:&gt;" class="" style="width:319px">6.    1 Shot Lecture        6.1 6 lectures</td></tr><tr id="8727e3eb-d7fb-4080-a97f-31ae20437e43"><td id="j{=h" class="" style="width:319px">7.5 Hours</td><td id="z[Wl" class="" style="width:319px">14 Hours</td><td id="g\:&gt;" class="" style="width:319px">6.  9 Hours             6.1  7 hours</td></tr></tbody></table><table id="6e26b8ca-966a-47e3-b440-c70169d63432" class="simple-table"><thead class="simple-table-header"><tr id="a2c7863f-1d7c-48de-93b3-9bdbcab3c808"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="50350ec4-8001-47bc-b47b-cd5ae5180aa4"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">13 Dec</th><td id="hIeB" class="" style="width:239.25px">1</td><td id="bkkU" class="" style="width:239.25px">1,2</td><td id="eccn" class="" style="width:239.25px">6.   3  hours</td></tr><tr id="1f63d38e-2f4f-497c-a568-c85147b0ab8a"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">14 Dec</th><td id="hIeB" class="" style="width:239.25px">2</td><td id="bkkU" class="" style="width:239.25px">3,4</td><td id="eccn" class="" style="width:239.25px">6.   3  hours</td></tr><tr id="0adb95d6-9fe5-4a0c-9409-31d98454b3df"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">15 Dec</th><td id="hIeB" class="" style="width:239.25px">3</td><td id="bkkU" class="" style="width:239.25px">5,6</td><td id="eccn" class="" style="width:239.25px">6.   3  hours</td></tr><tr id="8fd5b19d-0385-4dcd-8e3a-e203f601e45b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">16 Dec</th><td id="hIeB" class="" style="width:239.25px">4</td><td id="bkkU" class="" style="width:239.25px">7,8</td><td id="eccn" class="" style="width:239.25px">6.1     Lecture 1</td></tr><tr id="c0241070-8025-464f-a2fd-fb5ea17613ec"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">17 Dec</th><td id="hIeB" class="" style="width:239.25px">5</td><td id="bkkU" class="" style="width:239.25px">9,10</td><td id="eccn" class="" style="width:239.25px">6.1     Lecture 2</td></tr><tr id="6b73e588-72f5-4ed6-9fb8-0407437e4c84"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">18 Dec</th><td id="hIeB" class="" style="width:239.25px">6.1     Lecture 3 (Maths)</td><td id="bkkU" class="" style="width:239.25px">11,12</td><td id="eccn" class="" style="width:239.25px">6.1     Lecture 4</td></tr><tr id="3d0b5d6a-1c1b-4b0b-b156-2e2a217eeeef"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">19 Dec</th><td id="hIeB" class="" style="width:239.25px">6.1     Lecture 5 (Maths)</td><td id="bkkU" class="" style="width:239.25px">13,14</td><td id="eccn" class="" style="width:239.25px">6.1     Lecture 6</td></tr></tbody></table><p id="82f37909-b200-47d6-a110-c897b29a73b7" class="">
-</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="18d8a91c-b7d8-460e-b2a3-02d06544a182"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 6(20 DEC TO 26 DEC)<table id="133dd9d6-fb3a-487c-81d9-94f8fc23d296" class="simple-table"><thead class="simple-table-header"><tr id="950a13a3-225f-4fc6-a214-1a7a1958a9e2"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="0854d2bf-d082-4afa-9011-40143bf8b588"><td id="j{=h" class="" style="width:319px">6. Electromagnetic
-Induction
-12. Semiconductors</td><td id="z[Wl" class="" style="width:319px">6. Aldehyde, Ketones 
-6.1 Carboxylic acids</td><td id="g\:&gt;" class="" style="width:319px">7. Applications of Derivatives</td></tr><tr id="5d34ffb4-433d-46b4-b083-863e68181cf6"><td id="j{=h" class="" style="width:319px">6.  9 Lectures        12.  4 Lectures</td><td id="z[Wl" class="" style="width:319px">6. 10 Lectures       6.1 1 Shot Lecture</td><td id="g\:&gt;" class="" style="width:319px">1 shot Lecture       </td></tr><tr id="e0a02600-5096-4db5-8e5e-386f66296e73"><td id="j{=h" class="" style="width:319px">6.  9 Hours              12.  4 Hours</td><td id="z[Wl" class="" style="width:319px">6. 10 Hours             6.1 2 hours</td><td id="g\:&gt;" class="" style="width:319px">9 Hours</td></tr></tbody></table><table id="c67c9cc2-27ae-4d19-b2ce-9a2d989705be" class="simple-table"><thead class="simple-table-header"><tr id="a0efab49-f107-48de-a8a5-b70e55cf3b84"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="d37b173d-d274-4f50-9a13-beb2f4ce69f1"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">20 Dec</th><td id="hIeB" class="" style="width:239.25px">6.  1,2</td><td id="bkkU" class="" style="width:239.25px">6.    1</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="9bef4fa7-7a02-4151-a69a-2a47c60b6993"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">21 Dec</th><td id="hIeB" class="" style="width:239.25px">6.  3,4</td><td id="bkkU" class="" style="width:239.25px">6.    2</td><td id="eccn" class="" style="width:239.25px">2 hour</td></tr><tr id="f2413120-4032-4132-8b01-537e671185cc"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">22 Dec</th><td id="hIeB" class="" style="width:239.25px">6.  5,6</td><td id="bkkU" class="" style="width:239.25px">6.    3,4</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="c5566d90-5769-4951-88fa-87296280760e"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">23 Dec</th><td id="hIeB" class="" style="width:239.25px">6.  7,8</td><td id="bkkU" class="" style="width:239.25px">6.    5,6</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="a9af5425-807c-4192-8dc0-a03e9ee70c01"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">24 Dec</th><td id="hIeB" class="" style="width:239.25px">6.  9</td><td id="bkkU" class="" style="width:239.25px">6.    7,8</td><td id="eccn" class="" style="width:239.25px">2 hour</td></tr><tr id="71c9bcd9-5f7f-4633-8a37-b822e32f4135"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">25 Dec</th><td id="hIeB" class="" style="width:239.25px">12. 1,2</td><td id="bkkU" class="" style="width:239.25px">6.    9,10</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr><tr id="db426bef-9c37-4b02-8b91-ac774ced502c"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">26 Dec</th><td id="hIeB" class="" style="width:239.25px">12. 3,4</td><td id="bkkU" class="" style="width:239.25px">6.1 2 hours</td><td id="eccn" class="" style="width:239.25px">1 hour</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9fce1134-513c-47ac-b1c3-c5edb9340735"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 7(27 DEC TO 3 JAN)<table id="7b3f20a0-6d20-421b-ba1e-f0236bc2bd52" class="simple-table"><thead class="simple-table-header"><tr id="fce9a6de-e50d-4d64-9186-48ee077be12f"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="93796380-60bd-4f49-8745-14cf083b6756"><td id="j{=h" class="" style="width:319px">7. Alternating Current
-11. Modern Physics</td><td id="z[Wl" class="" style="width:319px">7. Amines</td><td id="g\:&gt;" class="" style="width:319px">7. Indefinite Integrals</td></tr><tr id="58daba04-7846-4fa5-a554-a953e9fca232"><td id="j{=h" class="" style="width:319px">7.  8 Lectures               11.  15 Lectures</td><td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td><td id="g\:&gt;" class="" style="width:319px">12 Lectures  </td></tr><tr id="aed82200-7c77-4a09-92b9-00a7dc8a0625"><td id="j{=h" class="" style="width:319px">7.   8 Hours                11.   15 Hours</td><td id="z[Wl" class="" style="width:319px">6 Hours</td><td id="g\:&gt;" class="" style="width:319px">12 Hours</td></tr></tbody></table><table id="1a212ef9-f787-4c05-99fb-7730c24ddf10" class="simple-table"><thead class="simple-table-header"><tr id="8e0991f3-35ac-49d8-baaa-ea98a6e4c35f"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="02f761d3-3b2d-4004-bb48-8406be77de2b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">27 Dec</th><td id="hIeB" class="" style="width:239.25px">7.   1,2,3</td><td id="bkkU" class="" style="width:239.25px">2 Hours</td><td id="eccn" class="" style="width:239.25px">1</td></tr><tr id="9507b073-cafc-4a67-af67-11bf9cf1fca1"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">28 Dec</th><td id="hIeB" class="" style="width:239.25px">7.   4,5,6</td><td id="bkkU" class="" style="width:239.25px">2 Hours</td><td id="eccn" class="" style="width:239.25px">2</td></tr><tr id="cf33845e-6a23-4067-8295-8a79812e4dc1"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">29 Dec</th><td id="hIeB" class="" style="width:239.25px">7.   7,8                 11.  1</td><td id="bkkU" class="" style="width:239.25px">2 Hours</td><td id="eccn" class="" style="width:239.25px">3</td></tr><tr id="a9c08efa-9fcb-4eb0-b85a-478abfd0408c"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">30 Dec</th><td id="hIeB" class="" style="width:239.25px">11.  2,3,4</td><td id="bkkU" class="" style="width:239.25px">11.  14 (Physics)</td><td id="eccn" class="" style="width:239.25px">4,5</td></tr><tr id="c3603982-acf7-436a-8c29-f4367a2822d4"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">31 Dec</th><td id="hIeB" class="" style="width:239.25px">11.  5,6,7</td><td id="bkkU" class="" style="width:239.25px">11.  15  (Physics)</td><td id="eccn" class="" style="width:239.25px">6,7</td></tr><tr id="e0c92c73-640b-4397-b175-42d4610043f8"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">2 Jan</th><td id="hIeB" class="" style="width:239.25px">11.  8,9,10</td><td id="bkkU" class="" style="width:239.25px">8,9 (Maths)</td><td id="eccn" class="" style="width:239.25px">10</td></tr><tr id="7edc8deb-478f-48c3-83d3-a02bb0bbb881"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">3 Jan</th><td id="hIeB" class="" style="width:239.25px">11.  11,12,13</td><td id="bkkU" class="" style="width:239.25px">11 (Maths)</td><td id="eccn" class="" style="width:239.25px">12</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ce57f7f4-f8e9-4a3c-a520-4e14dd9a41f1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 8(4 JAN TO 10 JAN)<table id="3bb409f7-2fc2-4243-99a9-3803fae2eefc" class="simple-table"><thead class="simple-table-header"><tr id="3a60ce31-f8af-4ae4-98b8-8d9b166abecb"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="23280482-aab3-4e72-980b-86a8511ee658"><td id="j{=h" class="" style="width:319px">8. Electromagnetic Waves</td><td id="z[Wl" class="" style="width:319px">8. Biomolecules      9. Polymers</td><td id="g\:&gt;" class="" style="width:319px">7.1  Definite Integrals               8. Applications of Integrals</td></tr><tr id="9d139780-5ff4-4488-a4c4-ba3087c17231"><td id="j{=h" class="" style="width:319px">1 Shot Lecture</td><td id="z[Wl" class="" style="width:319px">8. 1 Shot Lecture       9. 1 Shot Lecture</td><td id="g\:&gt;" class="" style="width:319px">7.1  17 Lectures     8. 5 Lectures</td></tr><tr id="acee051b-23e9-4a8e-a24d-70172a95f8ae"><td id="j{=h" class="" style="width:319px">5 Hours</td><td id="z[Wl" class="" style="width:319px">8. 4 hours               9. 2 hours</td><td id="g\:&gt;" class="" style="width:319px">7.1  17 Hours        8. 5 Hours</td></tr></tbody></table><table id="c9bcb121-54f6-49d4-917e-4d85ceb59a3f" class="simple-table"><thead class="simple-table-header"><tr id="b01696e0-cf9a-4566-b66e-766dceeb6d45"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="b8cf20c1-f4af-49ec-867b-329cca0723a5"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">4 Jan</th><td id="hIeB" class="" style="width:239.25px">2 hours</td><td id="bkkU" class="" style="width:239.25px">8. 2 hours</td><td id="eccn" class="" style="width:239.25px">1,2</td></tr><tr id="0fa5efbc-6e3c-43c3-aa6c-268084136a22"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">5 Jan</th><td id="hIeB" class="" style="width:239.25px">2 hours</td><td id="bkkU" class="" style="width:239.25px">8. 2 hours</td><td id="eccn" class="" style="width:239.25px">3,4,5</td></tr><tr id="3bacd5cc-a732-4593-a458-479b7589181b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">6 Jan</th><td id="hIeB" class="" style="width:239.25px">1 hour</td><td id="bkkU" class="" style="width:239.25px">9. 2 hours</td><td id="eccn" class="" style="width:239.25px">6,7</td></tr><tr id="53da9716-cc63-40e6-9083-3d6fdc7cba44"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">7 Jan</th><td id="hIeB" class="" style="width:239.25px">8.      1(Maths)</td><td id="bkkU" class="" style="width:239.25px">8.      2Maths)</td><td id="eccn" class="" style="width:239.25px">8,9</td></tr><tr id="aed485db-07d2-4db2-9682-12ee9d5d3087"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">8 Jan</th><td id="hIeB" class="" style="width:239.25px">8.      3(Maths)</td><td id="bkkU" class="" style="width:239.25px">8.      4Maths)</td><td id="eccn" class="" style="width:239.25px">10,11,12</td></tr><tr id="fb7cb952-40d8-4b76-b6ca-45fdbe6b89f4"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">9 Jan</th><td id="hIeB" class="" style="width:239.25px">13 (Maths)</td><td id="bkkU" class="" style="width:239.25px">8.      5(Maths)</td><td id="eccn" class="" style="width:239.25px">14</td></tr><tr id="749115ce-f545-4657-a835-ff01aab5bf2c"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">10 Jan</th><td id="hIeB" class="" style="width:239.25px">15 (Maths)</td><td id="bkkU" class="" style="width:239.25px">16 (Maths)</td><td id="eccn" class="" style="width:239.25px">17</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="529a8c9b-299a-485f-a32d-6006ba9b0e7e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Week 9(11 JAN TO 17 JAN)<table id="7183c0eb-6d0d-4262-910f-d547a379241c" class="simple-table"><thead class="simple-table-header"><tr id="c80f531c-8f4d-4b56-8a06-5efa5fdf9451"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="5930ab27-66d6-4047-8ad5-313419bba7ec"><td id="j{=h" class="" style="width:319px">9. Ray Optics</td><td id="z[Wl" class="" style="width:319px">10.  Solutions      11. Electrochemistry</td><td id="g\:&gt;" class="" style="width:319px">9. Differential Equations           10. Vector Algebra</td></tr><tr id="50e6e197-5525-4dcc-ae02-61e8e7343b00"><td id="j{=h" class="" style="width:319px">23 Lectures</td><td id="z[Wl" class="" style="width:319px">10.  10 Lectures      11.  9 Lectures</td><td id="g\:&gt;" class="" style="width:319px">9. 12 Lectures               10. 11 Lectures</td></tr><tr id="66d1caa9-65d2-4998-b279-b8823fd0a963"><td id="j{=h" class="" style="width:319px">23 Hours</td><td id="z[Wl" class="" style="width:319px">10.  10 Hours       11.  9 Hours</td><td id="g\:&gt;" class="" style="width:319px">9. 12 Hours                  10. 11 Hours</td></tr></tbody></table><table id="65c9fb1c-0015-4925-a6cb-b9f8472351b4" class="simple-table"><thead class="simple-table-header"><tr id="ea0da3d7-9ee0-4b45-a898-212b6d6268e6"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="3b01d0bc-1de8-4cd2-af13-de4ad1ebf60a"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">11 Jan</th><td id="hIeB" class="" style="width:239.25px">1,2,3</td><td id="bkkU" class="" style="width:239.25px">10. 1,2,3</td><td id="eccn" class="" style="width:239.25px">9.  1,2,3</td></tr><tr id="1ba43c22-e03b-4971-af3a-63396364fea8"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">12 Jan</th><td id="hIeB" class="" style="width:239.25px">4,5,6</td><td id="bkkU" class="" style="width:239.25px">10. 4,5,6</td><td id="eccn" class="" style="width:239.25px">9.  4,5,6</td></tr><tr id="176c368a-6ac6-4a22-9d8f-e522737255e9"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">13 Jan</th><td id="hIeB" class="" style="width:239.25px">7,8,9</td><td id="bkkU" class="" style="width:239.25px">10. 7,8,9</td><td id="eccn" class="" style="width:239.25px">9.  7,8,9</td></tr><tr id="e2d8dedc-988f-44f8-9a83-9eca801c7b9e"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">14 Jan</th><td id="hIeB" class="" style="width:239.25px">10,11,12</td><td id="bkkU" class="" style="width:239.25px">10. 10                  11.  1,2</td><td id="eccn" class="" style="width:239.25px">9.  10,11,12</td></tr><tr id="3bde6ab7-8e45-4c33-b33b-9b9cdb566d1b"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">15 Jan</th><td id="hIeB" class="" style="width:239.25px">13,14,15</td><td id="bkkU" class="" style="width:239.25px">11.  3,4,5</td><td id="eccn" class="" style="width:239.25px">10.  1,2,3,4</td></tr><tr id="da9a700a-bb93-475d-b756-842a8e9a8aa9"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">16 Jan</th><td id="hIeB" class="" style="width:239.25px">16,17,18</td><td id="bkkU" class="" style="width:239.25px">11.  6,7,8</td><td id="eccn" class="" style="width:239.25px">10.  5,6,7,8</td></tr><tr id="16dfc7b4-a679-480e-b978-4fbd37f27e19"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">17 Jan</th><td id="hIeB" class="" style="width:239.25px">19,20.21</td><td id="bkkU" class="" style="width:239.25px">11.  9  and physics(22,23)</td><td id="eccn" class="" style="width:239.25px">10.  9,10,11</td></tr></tbody></table></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="68ac9e6d-9d25-4ce7-bf15-2a6a2405db2e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">18 JAN TO 21 JAN<table id="eb9a0768-3e1c-44b5-8ac4-23ffa8af7474" class="simple-table"><thead class="simple-table-header"><tr id="ae8013c4-24f3-4e9d-857f-333d4bd175d9"><th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">Physics</th><th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">Chemistry</th><th id="g\:&gt;" class="simple-table-header-color simple-table-header" style="width:319px">Maths</th></tr></thead><tbody><tr id="0e914eb7-c4b1-4a46-b578-a0e9f18ca770"><td id="j{=h" class="" style="width:319px">10. Wave Optics</td><td id="z[Wl" class="" style="width:319px">11. Chemical Kinetics               13. Coordinate
-Compounds</td><td id="g\:&gt;" class="" style="width:319px">11. Three-Dimensional
-Geometry</td></tr><tr id="d8e17eac-4ea7-492e-8575-03f5c586c476"><td id="j{=h" class="" style="width:319px">8 Lectures</td><td id="z[Wl" class="" style="width:319px">11. 12 Lectures               13. 6 Lectures</td><td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td></tr><tr id="be803aa7-a493-4d3f-abc5-217412ac0b5e"><td id="j{=h" class="" style="width:319px">8 Hours</td><td id="z[Wl" class="" style="width:319px">11. 12 Hours               13. 6 Hours</td><td id="g\:&gt;" class="" style="width:319px">10 hours</td></tr></tbody></table><table id="0608fb88-aff7-4273-9526-09233727df42" class="simple-table"><thead class="simple-table-header"><tr id="70969a73-3b24-4143-af31-cdef3463e10e"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">Date/Subject</th><th id="hIeB" class="simple-table-header-color simple-table-header" style="width:239.25px">Physics</th><th id="bkkU" class="simple-table-header-color simple-table-header" style="width:239.25px">Chemistry</th><th id="eccn" class="simple-table-header-color simple-table-header" style="width:239.25px">Maths</th></tr></thead><tbody><tr id="6b51f737-a3f7-486c-b5aa-33af88e2fbb8"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">18 Jan</th><td id="hIeB" class="" style="width:239.25px">1,2</td><td id="bkkU" class="" style="width:239.25px">11.  1,2,3,4</td><td id="eccn" class="" style="width:239.25px">4 hours</td></tr><tr id="49596624-0ac8-47ee-bdc4-8117e2018903"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">19 Jan</th><td id="hIeB" class="" style="width:239.25px">3,4</td><td id="bkkU" class="" style="width:239.25px">11.  5,6,7,8</td><td id="eccn" class="" style="width:239.25px">4 hours</td></tr><tr id="e54f2fc7-0b60-4f44-89b0-b11ac5a0d452"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">20 Jan</th><td id="hIeB" class="" style="width:239.25px">5,6</td><td id="bkkU" class="" style="width:239.25px">11.  9,10,11,12</td><td id="eccn" class="" style="width:239.25px">2 hours</td></tr><tr id="6529509e-68f2-468c-871d-e042f944ebaf"><th id="XGV[" class="simple-table-header-color simple-table-header" style="width:239.25px">21 Jan</th><td id="hIeB" class="" style="width:239.25px">7,8</td><td id="bkkU" class="" style="width:239.25px">13.  1,2,3,4</td><td id="eccn" class="" style="width:239.25px">13.  5,6(Maths)</td></tr></tbody></table></div></figure><p id="d1df452e-8368-445c-9c0b-658ebb0f437d" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" type="x-icon" href="SRJ2-removebg-preview.png">
+	<title>Weekly Lecture Plan</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="e4de1665-1fe4-4015-aba5-3f5f3dff1eeb" class="page sans">
+		<header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1878.jpg"
+				style="object-position:center 0%" />
+			<h1 class="page-title">Weekly Lecture Plan</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="0de8f86b-d1c1-4309-809d-f65dc5dff04e">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 1(15 NOV to 21 NOV)<table id="8708f34e-1942-4847-8b79-592db2da8c8e"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="844434ad-b68c-40ff-bfe7-5e631595c62e">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="1d15aa33-a27d-489c-a127-c3887dad8f61">
+								<td id="j{=h" class="" style="width:319px">Electrostatics</td>
+								<td id="z[Wl" class="" style="width:319px">GOC</td>
+								<td id="g\:&gt;" class="" style="width:319px">Relation and Functions</td>
+							</tr>
+							<tr id="c001d31c-0dda-4031-9bda-958fd41d4891">
+								<td id="j{=h" class="" style="width:319px">17 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">17 Lectures</td>
+							</tr>
+							<tr id="6945155a-185a-4b46-9fd8-007aff917760">
+								<td id="j{=h" class="" style="width:319px">17 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">7 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">17 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="a108c36f-7257-439d-a702-ddc954041829" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="b60736b5-8df4-4043-9349-9a33995264f7">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="bf624537-87cb-4594-bc75-9d8ba237fd39">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">15 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2,3</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px"></td>
+							</tr>
+							<tr id="d848c12f-7b3b-466b-8cb6-17e811f0a001">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">16 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">4,5</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px"></td>
+							</tr>
+							<tr id="1430d693-bcc6-43d0-88dc-45c64a8d7576">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">17 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">6,7,8</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">1,2,3</td>
+							</tr>
+							<tr id="3d6c97cd-bc30-4e16-b6d4-44f1ad79ba78">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">18 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">9,10</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">4,5,6,7</td>
+							</tr>
+							<tr id="d7dc17af-cefe-49e3-9f71-16dbff8b0073">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">19 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">11,12,13</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">8,9,10</td>
+							</tr>
+							<tr id="82fd7c48-bdad-4818-bb12-8e23eac12d04">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">20 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">14,15</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">11,12,13,14</td>
+							</tr>
+							<tr id="a43fd4b3-94fb-4093-87e5-c4eb8cb3af20">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">21 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">16,17</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">15,16,17</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="c9759b4e-97b6-48d6-be02-711f2ace5fc9">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 2(22 NOV TO 28 NOV)<table id="f937a894-5d53-4c61-a400-d63d1244eea1"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="612410cb-75c3-4380-b46b-876e8d7372bf">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="5bbda1f5-6220-4cac-a736-db14b3b58c2e">
+								<td id="j{=h" class="" style="width:319px">2. Current Electricity</td>
+								<td id="z[Wl" class="" style="width:319px">2. Isomerism</td>
+								<td id="g\:&gt;" class="" style="width:319px">2.Inverse Trigonometric
+									Functions</td>
+							</tr>
+							<tr id="4ac03dbe-18ae-4014-89a9-141e58d63477">
+								<td id="j{=h" class="" style="width:319px">16 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">10 Lectures</td>
+							</tr>
+							<tr id="90f9b108-3777-4224-bc69-1f01093104d5">
+								<td id="j{=h" class="" style="width:319px">16 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">8 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">10 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="b8509b6c-090a-45fe-9ca7-3141b6a121ca" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="462e2eca-468d-44f1-a359-50f8d2372065">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="dad19da3-c23e-4ea3-ab31-41bbdd1b921d">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">22 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">1</td>
+							</tr>
+							<tr id="ac4cc42e-6f4c-4543-8ab3-310585d996ef">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">23 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">2 hour</td>
+								<td id="eccn" class="" style="width:239.25px">2</td>
+							</tr>
+							<tr id="9bfb14a8-6d9e-494b-8f78-93da7f0d322a">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">24 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">5,6,7</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">3,4</td>
+							</tr>
+							<tr id="34adb2a4-49ff-45d8-9cfc-6a5f2bfc5127">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">25 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">8,9</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">5,6</td>
+							</tr>
+							<tr id="0dc0d36c-7bf0-4d2d-a759-1e450b0527e3">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">26 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">10,11</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">7</td>
+							</tr>
+							<tr id="2d2e9f87-b57c-4c40-b525-bc49b5137882">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">27 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">12,13,14</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">8</td>
+							</tr>
+							<tr id="25f78417-5aa5-4e75-baf9-3faa3deb16d7">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">28 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">15,16</td>
+								<td id="bkkU" class="" style="width:239.25px">1 hour</td>
+								<td id="eccn" class="" style="width:239.25px">9,10</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="b682400d-3c26-47ab-bce0-1e75ad6235a8">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 3(29 NOV TO 5 DEC)<table id="20397cdf-5003-41a3-9a6c-550c9602240b"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="7de81a62-86f8-46e8-ab6e-685eabd745f9">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="bab66adb-830e-42ee-854a-5b9e67480384">
+								<td id="j{=h" class="" style="width:319px">3. Capacitors</td>
+								<td id="z[Wl" class="" style="width:319px">3. Hydrocarbons</td>
+								<td id="g\:&gt;" class="" style="width:319px">3. Matrices
+									4. Determinants</td>
+							</tr>
+							<tr id="373fb245-aeb9-4daf-b0d6-faf4209c730a">
+								<td id="j{=h" class="" style="width:319px">19 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">8 Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td>
+							</tr>
+							<tr id="518b4347-6798-4534-ac7d-60e0e06bc448">
+								<td id="j{=h" class="" style="width:319px">19 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">8 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">12 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="1e1f94be-5af1-457a-bbf1-23de9672808f" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="5b45e8b1-9bee-4f45-b2f2-bbd144540ac3">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="2cafc2e6-428d-4063-9204-2b5fd4483395">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">29 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">1</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="ced833ac-4d2e-401e-a4b1-e991f6b5754d">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">30 Nov</th>
+								<td id="hIeB" class="" style="width:239.25px">3,4,5</td>
+								<td id="bkkU" class="" style="width:239.25px">2</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="e62c4801-0ab3-4cfa-8177-a9bef7270447">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">1 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6,7,8</td>
+								<td id="bkkU" class="" style="width:239.25px">3</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="f340825d-cb82-422f-937c-07bb4d31ad09">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">2 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">9,10,11</td>
+								<td id="bkkU" class="" style="width:239.25px">4</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="01ba1cdc-98b0-4ddd-bbcc-96757a1f267d">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">3 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">12,13,14</td>
+								<td id="bkkU" class="" style="width:239.25px">5</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="1c5df19f-11ca-4e60-a16e-b238f959a32d">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">4 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">15,16,17</td>
+								<td id="bkkU" class="" style="width:239.25px">6</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="77fab86b-015a-4b14-83ba-eed1e59c8094">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">5 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">18,19</td>
+								<td id="bkkU" class="" style="width:239.25px">7,8</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+						</tbody>
+					</table>
+					<p id="e9b2859c-d130-4d01-a4b6-60de863c0c36" class="">
+					</p>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="02bdf7d7-1885-417d-8522-42cef1d04eb2">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 4(6 DEC TO 12 DEC)<table id="192de821-ccd2-4109-91fc-0d75697620f5"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="0ef57ec3-5a56-4b89-b069-0f3f3b211440">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="6935d63d-056a-46f8-9202-a45397f18f90">
+								<td id="j{=h" class="" style="width:319px">4. Moving Charges and
+									Magnetism</td>
+								<td id="z[Wl" class="" style="width:319px">4. Haloalkanes and
+									Haloarenes</td>
+								<td id="g\:&gt;" class="" style="width:319px">5. Limits</td>
+							</tr>
+							<tr id="b4c5616f-59b3-4502-98cf-475557640cfc">
+								<td id="j{=h" class="" style="width:319px">16 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">8 Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td>
+							</tr>
+							<tr id="36e175fc-a7cf-4584-89d8-53139a2ce697">
+								<td id="j{=h" class="" style="width:319px">16 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">12 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">6 hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="607848b5-b028-4ece-9950-8f1fb762597b" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="a9de15c2-babf-442f-aef8-324b28ec34d2">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="71221266-dcaf-4aa7-91f0-3435d7f1576f">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">6 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">1</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="90b58e8d-1652-42b8-af97-06fef2995b51">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">7 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">2</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="935fc9d4-c8f5-4006-9e92-80c63052b926">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">8 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">5,6,7</td>
+								<td id="bkkU" class="" style="width:239.25px">3</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="28dd8cfe-3bcd-41b3-afcb-935122cacb1b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">9 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">8,9</td>
+								<td id="bkkU" class="" style="width:239.25px">4,5</td>
+								<td id="eccn" class="" style="width:239.25px">no lecture</td>
+							</tr>
+							<tr id="a7eb038f-8e4f-4b2b-8486-a2f5b08c1d24">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">10 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">10,11</td>
+								<td id="bkkU" class="" style="width:239.25px">6</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="08ad0813-ae5d-435e-a92a-7c5ff280d60b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">11 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">12,13,14</td>
+								<td id="bkkU" class="" style="width:239.25px">7</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="0985ec77-a6ac-4380-a234-5b64e329b2e6">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">12 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">15,16</td>
+								<td id="bkkU" class="" style="width:239.25px">8</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="c08e2efd-efc2-48f1-a4f6-5e1771b5a551">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 5(13 DEC TO 19 DEC)<table id="e403d405-f042-4faa-a577-f748b6ff407d"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="d63e6e65-e661-4cc0-9be0-0354ffafc5b6">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="262663e2-3b35-477c-b33e-905c68316116">
+								<td id="j{=h" class="" style="width:319px">5. Magnetism and Matter</td>
+								<td id="z[Wl" class="" style="width:319px">5. Alcohol, Phenols and
+									Ethers</td>
+								<td id="g\:&gt;" class="" style="width:319px">6. Continuity and
+									Differentiability and 6.1. Method of Differentiation</td>
+							</tr>
+							<tr id="be9cf6db-513b-4c4b-a0fc-4fd62f7840db">
+								<td id="j{=h" class="" style="width:319px">5 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">14 Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">6. 1 Shot Lecture 6.1 6 lectures</td>
+							</tr>
+							<tr id="8727e3eb-d7fb-4080-a97f-31ae20437e43">
+								<td id="j{=h" class="" style="width:319px">7.5 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">14 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">6. 9 Hours 6.1 7 hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="6e26b8ca-966a-47e3-b440-c70169d63432" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="a2c7863f-1d7c-48de-93b3-9bdbcab3c808">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="50350ec4-8001-47bc-b47b-cd5ae5180aa4">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">13 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">1</td>
+								<td id="bkkU" class="" style="width:239.25px">1,2</td>
+								<td id="eccn" class="" style="width:239.25px">6. 3 hours</td>
+							</tr>
+							<tr id="1f63d38e-2f4f-497c-a568-c85147b0ab8a">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">14 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">2</td>
+								<td id="bkkU" class="" style="width:239.25px">3,4</td>
+								<td id="eccn" class="" style="width:239.25px">6. 3 hours</td>
+							</tr>
+							<tr id="0adb95d6-9fe5-4a0c-9409-31d98454b3df">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">15 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">3</td>
+								<td id="bkkU" class="" style="width:239.25px">5,6</td>
+								<td id="eccn" class="" style="width:239.25px">6. 3 hours</td>
+							</tr>
+							<tr id="8fd5b19d-0385-4dcd-8e3a-e203f601e45b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">16 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">4</td>
+								<td id="bkkU" class="" style="width:239.25px">7,8</td>
+								<td id="eccn" class="" style="width:239.25px">6.1 Lecture 1</td>
+							</tr>
+							<tr id="c0241070-8025-464f-a2fd-fb5ea17613ec">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">17 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">5</td>
+								<td id="bkkU" class="" style="width:239.25px">9,10</td>
+								<td id="eccn" class="" style="width:239.25px">6.1 Lecture 2</td>
+							</tr>
+							<tr id="6b73e588-72f5-4ed6-9fb8-0407437e4c84">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">18 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6.1 Lecture 3 (Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">11,12</td>
+								<td id="eccn" class="" style="width:239.25px">6.1 Lecture 4</td>
+							</tr>
+							<tr id="3d0b5d6a-1c1b-4b0b-b156-2e2a217eeeef">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">19 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6.1 Lecture 5 (Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">13,14</td>
+								<td id="eccn" class="" style="width:239.25px">6.1 Lecture 6</td>
+							</tr>
+						</tbody>
+					</table>
+					<p id="82f37909-b200-47d6-a110-c897b29a73b7" class="">
+					</p>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="18d8a91c-b7d8-460e-b2a3-02d06544a182">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 6(20 DEC TO 26 DEC)<table id="133dd9d6-fb3a-487c-81d9-94f8fc23d296"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="950a13a3-225f-4fc6-a214-1a7a1958a9e2">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="0854d2bf-d082-4afa-9011-40143bf8b588">
+								<td id="j{=h" class="" style="width:319px">6. Electromagnetic
+									Induction
+									12. Semiconductors</td>
+								<td id="z[Wl" class="" style="width:319px">6. Aldehyde, Ketones
+									6.1 Carboxylic acids</td>
+								<td id="g\:&gt;" class="" style="width:319px">7. Applications of Derivatives</td>
+							</tr>
+							<tr id="5d34ffb4-433d-46b4-b083-863e68181cf6">
+								<td id="j{=h" class="" style="width:319px">6. 9 Lectures 12. 4 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">6. 10 Lectures 6.1 1 Shot Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">1 shot Lecture </td>
+							</tr>
+							<tr id="e0a02600-5096-4db5-8e5e-386f66296e73">
+								<td id="j{=h" class="" style="width:319px">6. 9 Hours 12. 4 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">6. 10 Hours 6.1 2 hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">9 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="c67c9cc2-27ae-4d19-b2ce-9a2d989705be" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="a0efab49-f107-48de-a8a5-b70e55cf3b84">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="d37b173d-d274-4f50-9a13-beb2f4ce69f1">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">20 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6. 1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 1</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="9bef4fa7-7a02-4151-a69a-2a47c60b6993">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">21 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6. 3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 2</td>
+								<td id="eccn" class="" style="width:239.25px">2 hour</td>
+							</tr>
+							<tr id="f2413120-4032-4132-8b01-537e671185cc">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">22 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6. 5,6</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 3,4</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="c5566d90-5769-4951-88fa-87296280760e">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">23 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6. 7,8</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 5,6</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="a9af5425-807c-4192-8dc0-a03e9ee70c01">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">24 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">6. 9</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 7,8</td>
+								<td id="eccn" class="" style="width:239.25px">2 hour</td>
+							</tr>
+							<tr id="71c9bcd9-5f7f-4633-8a37-b822e32f4135">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">25 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">12. 1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">6. 9,10</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+							<tr id="db426bef-9c37-4b02-8b91-ac774ced502c">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">26 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">12. 3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">6.1 2 hours</td>
+								<td id="eccn" class="" style="width:239.25px">1 hour</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="9fce1134-513c-47ac-b1c3-c5edb9340735">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 7(27 DEC TO 3 JAN)<table id="7b3f20a0-6d20-421b-ba1e-f0236bc2bd52"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="fce9a6de-e50d-4d64-9186-48ee077be12f">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="93796380-60bd-4f49-8745-14cf083b6756">
+								<td id="j{=h" class="" style="width:319px">7. Alternating Current
+									11. Modern Physics</td>
+								<td id="z[Wl" class="" style="width:319px">7. Amines</td>
+								<td id="g\:&gt;" class="" style="width:319px">7. Indefinite Integrals</td>
+							</tr>
+							<tr id="58daba04-7846-4fa5-a554-a953e9fca232">
+								<td id="j{=h" class="" style="width:319px">7. 8 Lectures 11. 15 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">1 Shot Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">12 Lectures </td>
+							</tr>
+							<tr id="aed82200-7c77-4a09-92b9-00a7dc8a0625">
+								<td id="j{=h" class="" style="width:319px">7. 8 Hours 11. 15 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">6 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">12 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="1a212ef9-f787-4c05-99fb-7730c24ddf10" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="8e0991f3-35ac-49d8-baaa-ea98a6e4c35f">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="02f761d3-3b2d-4004-bb48-8406be77de2b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">27 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">7. 1,2,3</td>
+								<td id="bkkU" class="" style="width:239.25px">2 Hours</td>
+								<td id="eccn" class="" style="width:239.25px">1</td>
+							</tr>
+							<tr id="9507b073-cafc-4a67-af67-11bf9cf1fca1">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">28 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">7. 4,5,6</td>
+								<td id="bkkU" class="" style="width:239.25px">2 Hours</td>
+								<td id="eccn" class="" style="width:239.25px">2</td>
+							</tr>
+							<tr id="cf33845e-6a23-4067-8295-8a79812e4dc1">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">29 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">7. 7,8 11. 1</td>
+								<td id="bkkU" class="" style="width:239.25px">2 Hours</td>
+								<td id="eccn" class="" style="width:239.25px">3</td>
+							</tr>
+							<tr id="a9c08efa-9fcb-4eb0-b85a-478abfd0408c">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">30 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">11. 2,3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 14 (Physics)</td>
+								<td id="eccn" class="" style="width:239.25px">4,5</td>
+							</tr>
+							<tr id="c3603982-acf7-436a-8c29-f4367a2822d4">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">31 Dec</th>
+								<td id="hIeB" class="" style="width:239.25px">11. 5,6,7</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 15 (Physics)</td>
+								<td id="eccn" class="" style="width:239.25px">6,7</td>
+							</tr>
+							<tr id="e0c92c73-640b-4397-b175-42d4610043f8">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">2 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">11. 8,9,10</td>
+								<td id="bkkU" class="" style="width:239.25px">8,9 (Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">10</td>
+							</tr>
+							<tr id="7edc8deb-478f-48c3-83d3-a02bb0bbb881">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">3 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">11. 11,12,13</td>
+								<td id="bkkU" class="" style="width:239.25px">11 (Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">12</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="ce57f7f4-f8e9-4a3c-a520-4e14dd9a41f1">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 8(4 JAN TO 10 JAN)<table id="3bb409f7-2fc2-4243-99a9-3803fae2eefc"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="3a60ce31-f8af-4ae4-98b8-8d9b166abecb">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="23280482-aab3-4e72-980b-86a8511ee658">
+								<td id="j{=h" class="" style="width:319px">8. Electromagnetic Waves</td>
+								<td id="z[Wl" class="" style="width:319px">8. Biomolecules 9. Polymers</td>
+								<td id="g\:&gt;" class="" style="width:319px">7.1 Definite Integrals 8. Applications of
+									Integrals</td>
+							</tr>
+							<tr id="9d139780-5ff4-4488-a4c4-ba3087c17231">
+								<td id="j{=h" class="" style="width:319px">1 Shot Lecture</td>
+								<td id="z[Wl" class="" style="width:319px">8. 1 Shot Lecture 9. 1 Shot Lecture</td>
+								<td id="g\:&gt;" class="" style="width:319px">7.1 17 Lectures 8. 5 Lectures</td>
+							</tr>
+							<tr id="acee051b-23e9-4a8e-a24d-70172a95f8ae">
+								<td id="j{=h" class="" style="width:319px">5 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">8. 4 hours 9. 2 hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">7.1 17 Hours 8. 5 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="c9bcb121-54f6-49d4-917e-4d85ceb59a3f" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="b01696e0-cf9a-4566-b66e-766dceeb6d45">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="b8cf20c1-f4af-49ec-867b-329cca0723a5">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">4 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">2 hours</td>
+								<td id="bkkU" class="" style="width:239.25px">8. 2 hours</td>
+								<td id="eccn" class="" style="width:239.25px">1,2</td>
+							</tr>
+							<tr id="0fa5efbc-6e3c-43c3-aa6c-268084136a22">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">5 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">2 hours</td>
+								<td id="bkkU" class="" style="width:239.25px">8. 2 hours</td>
+								<td id="eccn" class="" style="width:239.25px">3,4,5</td>
+							</tr>
+							<tr id="3bacd5cc-a732-4593-a458-479b7589181b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">6 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">1 hour</td>
+								<td id="bkkU" class="" style="width:239.25px">9. 2 hours</td>
+								<td id="eccn" class="" style="width:239.25px">6,7</td>
+							</tr>
+							<tr id="53da9716-cc63-40e6-9083-3d6fdc7cba44">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">7 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">8. 1(Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">8. 2Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">8,9</td>
+							</tr>
+							<tr id="aed485db-07d2-4db2-9682-12ee9d5d3087">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">8 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">8. 3(Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">8. 4Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">10,11,12</td>
+							</tr>
+							<tr id="fb7cb952-40d8-4b76-b6ca-45fdbe6b89f4">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">9 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">13 (Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">8. 5(Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">14</td>
+							</tr>
+							<tr id="749115ce-f545-4657-a835-ff01aab5bf2c">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">10 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">15 (Maths)</td>
+								<td id="bkkU" class="" style="width:239.25px">16 (Maths)</td>
+								<td id="eccn" class="" style="width:239.25px">17</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="529a8c9b-299a-485f-a32d-6006ba9b0e7e">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">Week 9(11 JAN TO 17 JAN)<table id="7183c0eb-6d0d-4262-910f-d547a379241c"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="c80f531c-8f4d-4b56-8a06-5efa5fdf9451">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="5930ab27-66d6-4047-8ad5-313419bba7ec">
+								<td id="j{=h" class="" style="width:319px">9. Ray Optics</td>
+								<td id="z[Wl" class="" style="width:319px">10. Solutions 11. Electrochemistry</td>
+								<td id="g\:&gt;" class="" style="width:319px">9. Differential Equations 10. Vector
+									Algebra</td>
+							</tr>
+							<tr id="50e6e197-5525-4dcc-ae02-61e8e7343b00">
+								<td id="j{=h" class="" style="width:319px">23 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">10. 10 Lectures 11. 9 Lectures</td>
+								<td id="g\:&gt;" class="" style="width:319px">9. 12 Lectures 10. 11 Lectures</td>
+							</tr>
+							<tr id="66d1caa9-65d2-4998-b279-b8823fd0a963">
+								<td id="j{=h" class="" style="width:319px">23 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">10. 10 Hours 11. 9 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">9. 12 Hours 10. 11 Hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="65c9fb1c-0015-4925-a6cb-b9f8472351b4" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="ea0da3d7-9ee0-4b45-a898-212b6d6268e6">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="3b01d0bc-1de8-4cd2-af13-de4ad1ebf60a">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">11 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2,3</td>
+								<td id="bkkU" class="" style="width:239.25px">10. 1,2,3</td>
+								<td id="eccn" class="" style="width:239.25px">9. 1,2,3</td>
+							</tr>
+							<tr id="1ba43c22-e03b-4971-af3a-63396364fea8">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">12 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">4,5,6</td>
+								<td id="bkkU" class="" style="width:239.25px">10. 4,5,6</td>
+								<td id="eccn" class="" style="width:239.25px">9. 4,5,6</td>
+							</tr>
+							<tr id="176c368a-6ac6-4a22-9d8f-e522737255e9">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">13 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">7,8,9</td>
+								<td id="bkkU" class="" style="width:239.25px">10. 7,8,9</td>
+								<td id="eccn" class="" style="width:239.25px">9. 7,8,9</td>
+							</tr>
+							<tr id="e2d8dedc-988f-44f8-9a83-9eca801c7b9e">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">14 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">10,11,12</td>
+								<td id="bkkU" class="" style="width:239.25px">10. 10 11. 1,2</td>
+								<td id="eccn" class="" style="width:239.25px">9. 10,11,12</td>
+							</tr>
+							<tr id="3bde6ab7-8e45-4c33-b33b-9b9cdb566d1b">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">15 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">13,14,15</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 3,4,5</td>
+								<td id="eccn" class="" style="width:239.25px">10. 1,2,3,4</td>
+							</tr>
+							<tr id="da9a700a-bb93-475d-b756-842a8e9a8aa9">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">16 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">16,17,18</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 6,7,8</td>
+								<td id="eccn" class="" style="width:239.25px">10. 5,6,7,8</td>
+							</tr>
+							<tr id="16dfc7b4-a679-480e-b978-4fbd37f27e19">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">17 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">19,20.21</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 9 and physics(22,23)</td>
+								<td id="eccn" class="" style="width:239.25px">10. 9,10,11</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="68ac9e6d-9d25-4ce7-bf15-2a6a2405db2e">
+				<div style="font-size:1.5em"><span class="icon">💡</span></div>
+				<div style="width:100%">18 JAN TO 21 JAN<table id="eb9a0768-3e1c-44b5-8ac4-23ffa8af7474"
+						class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="ae8013c4-24f3-4e9d-857f-333d4bd175d9">
+								<th id="j{=h" class="simple-table-header-color simple-table-header" style="width:319px">
+									Physics</th>
+								<th id="z[Wl" class="simple-table-header-color simple-table-header" style="width:319px">
+									Chemistry</th>
+								<th id="g\:&gt;" class="simple-table-header-color simple-table-header"
+									style="width:319px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="0e914eb7-c4b1-4a46-b578-a0e9f18ca770">
+								<td id="j{=h" class="" style="width:319px">10. Wave Optics</td>
+								<td id="z[Wl" class="" style="width:319px">11. Chemical Kinetics 13. Coordinate
+									Compounds</td>
+								<td id="g\:&gt;" class="" style="width:319px">11. Three-Dimensional
+									Geometry</td>
+							</tr>
+							<tr id="d8e17eac-4ea7-492e-8575-03f5c586c476">
+								<td id="j{=h" class="" style="width:319px">8 Lectures</td>
+								<td id="z[Wl" class="" style="width:319px">11. 12 Lectures 13. 6 Lectures</td>
+								<td id="g\:&gt;" class="" style="width:319px">1 Shot Lecture</td>
+							</tr>
+							<tr id="be803aa7-a493-4d3f-abc5-217412ac0b5e">
+								<td id="j{=h" class="" style="width:319px">8 Hours</td>
+								<td id="z[Wl" class="" style="width:319px">11. 12 Hours 13. 6 Hours</td>
+								<td id="g\:&gt;" class="" style="width:319px">10 hours</td>
+							</tr>
+						</tbody>
+					</table>
+					<table id="0608fb88-aff7-4273-9526-09233727df42" class="simple-table">
+						<thead class="simple-table-header">
+							<tr id="70969a73-3b24-4143-af31-cdef3463e10e">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Date/Subject</th>
+								<th id="hIeB" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Physics</th>
+								<th id="bkkU" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Chemistry</th>
+								<th id="eccn" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">Maths</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="6b51f737-a3f7-486c-b5aa-33af88e2fbb8">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">18 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">1,2</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 1,2,3,4</td>
+								<td id="eccn" class="" style="width:239.25px">4 hours</td>
+							</tr>
+							<tr id="49596624-0ac8-47ee-bdc4-8117e2018903">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">19 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">3,4</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 5,6,7,8</td>
+								<td id="eccn" class="" style="width:239.25px">4 hours</td>
+							</tr>
+							<tr id="e54f2fc7-0b60-4f44-89b0-b11ac5a0d452">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">20 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">5,6</td>
+								<td id="bkkU" class="" style="width:239.25px">11. 9,10,11,12</td>
+								<td id="eccn" class="" style="width:239.25px">2 hours</td>
+							</tr>
+							<tr id="6529509e-68f2-468c-871d-e042f944ebaf">
+								<th id="XGV[" class="simple-table-header-color simple-table-header"
+									style="width:239.25px">21 Jan</th>
+								<td id="hIeB" class="" style="width:239.25px">7,8</td>
+								<td id="bkkU" class="" style="width:239.25px">13. 1,2,3,4</td>
+								<td id="eccn" class="" style="width:239.25px">13. 5,6(Maths)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</figure>
+			<p id="d1df452e-8368-445c-9c0b-658ebb0f437d" class="">
+			</p>
+		</div>
+	</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+</body>
+
+</html>
